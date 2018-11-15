@@ -9,6 +9,11 @@
 
      	 $nome = "Geovane";
 
+     	 $idade = "28";
+
+     	 $cidade = "rocinha";
+
+
           echo $nome; //esse é um comnetário
           /*
           esse comentário é de 
@@ -16,10 +21,30 @@
           */
           #outro tipo de comentário
 
-
              ?>
      </h1>
+<br>
+<br>
 
+<h3>
+	<?php
+     	 $idade = "28";
+     	 $cidade = "Itapoã";
+          echo "A idade do ".$nome." é de ".$idade." anos e ele mora em ".$cidade;
+
+	?>
+<br>
+<br>
+	<?php
+    $nascimento = '10/02/1998';
+    $sobrenome = 'Fonseca da Silva';
+	?>
+
+	<p><?php echo $nome ?></p>
+	<p><?php echo $sobrenome ?></p>
+	<p><?php echo $nascimento  ?></p>
+
+</h3>
 
 </body>
 </html>
