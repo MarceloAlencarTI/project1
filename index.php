@@ -14,7 +14,7 @@
      	 $cidade = "rocinha";
 
 
-          echo $nome; //esse é um comnetário
+          echo $nome; //esse é um comentário
           /*
           esse comentário é de 
           várias linhas de texto e pode aumentar
