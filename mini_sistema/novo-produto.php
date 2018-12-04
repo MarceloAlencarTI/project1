@@ -4,6 +4,16 @@
 
 	require "includes/connection.php";
 
+ if(isset($_GET['id']) && $_GET['id'] != ''){
+
+
+ 	$id = $_GET['id'];
+    $sql_produto = "SELECT * FROM produto WHERE id = {$id};";
+    $produto = $conexao->query($sql_produto);
+    $dados_produto = $produto->fetch_assoc();
+
+ }
+
 	$sql_categorias = "SELECT * FROM categoria";
 	$categorias = $conexao->query($sql_categorias);
 ?>
@@ -29,20 +39,23 @@
 				<div class="col-6">
 					<div class="form-group">
 						<label for="nome">Nome:</label>
-						<input type="text" name="nome" id="nome" class="form-control" required>
+						<input type="text" name="nome" id="nome" class="form-control" required
+						value="<?php echo (isset($dados_produto) ? $dados_produto['nome'] : ''); ?>">
 					</div>
 				</div>
 
 				<div class="col-6">
 					<div class="form-group">
 						<label for="valor">Valor (R$):</label>
-						<input type="text" name="valor" id="valor" class="form-control price" required>
+						<input type="text" name="valor" id="valor" class="form-control price" required
+						value="<?php echo (isset($dados_produto) ? $dados_produto['valor'] : ''); ?>">
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="form-group">
 						<label for="estoque">Estoque:</label>
-						<input type="number" name="estoque" id="estoque" class="form-control" required>
+						<input type="number" name="estoque" id="estoque" class="form-control" required
+						value="<?php echo (isset($dados_produto) ? $dados_produto['estoque'] : ''); ?>">
 					</div>
 				</div>
 				<div class="col-6">
