@@ -65,7 +65,12 @@
 						<select name="id_categoria" class="form-control" required>
 							<option value="">Escolha a categoria</option>
 							<?php while($mercadoria = $categorias->fetch_array(MYSQLI_ASSOC)) { ?>
-								<option value="<?php echo $mercadoria['id'] ?>"><?php echo $mercadoria['descricao'] ?></option>
+								<option value="<?php echo $mercadoria['id'] ?>">
+
+								<?php if(isset($dados_produto) && $dados_produto['id_categoria'] == $mercadoria['id']) {echo 'selected="selected"'}
+								 ?>	
+
+								 <?php echo $mercadoria['descricao'] ?></option>
 							<?php } ?>
 
 						</select>
